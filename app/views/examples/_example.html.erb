@@ -1,0 +1,4 @@
+<%= div_for example do %> 
+  <%= example.body %><br>
+  <%= link_to 'Delete', thought_example_path(:thought_id => @thought, :id => example), confirm: 'Are you sure?', method: :delete %><br>
+<% end %>

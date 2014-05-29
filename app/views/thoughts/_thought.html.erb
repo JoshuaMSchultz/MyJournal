@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <%= @thought.title %>
+</h2>
+
+<p>
+  <%= @thought.body %>
+</p>
+
+<%= link_to 'Thoughts', thoughts_path %><br>
+<%= link_to 'Edit', edit_thought_path(@thought) %><br> 
+<%= link_to 'Delete', @thought, method: :delete, data: { confirm: 'Are you sure?' } %>
