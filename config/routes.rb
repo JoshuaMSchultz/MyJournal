@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sources
+
   root 'thoughts#new'
   resources :thoughts do
     resources :examples
