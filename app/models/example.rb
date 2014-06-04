@@ -1,5 +1,6 @@
 class Example < ActiveRecord::Base
-  belongs_to :Thought
+  belongs_to :thought
+  belongs_to :source
   
   validates :body, presence:true
 end
