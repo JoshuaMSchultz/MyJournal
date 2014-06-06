@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603234213) do
+ActiveRecord::Schema.define(version: 20140529212032) do
 
   create_table "examples", force: true do |t|
     t.text     "body"
     t.integer  "thought_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "source_id"
   end
 
   create_table "sources", force: true do |t|

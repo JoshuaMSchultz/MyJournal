@@ -5,7 +5,12 @@
 </h2>
 
 <p>
-  <%= simple_format raw(@thought.body_with_links) %>
+  <%= simple_format(
+  begin
+    @thought.body_with_links.html_safe
+  rescue 
+	@thought.body
+  end) %>
 </p>
 
 <%= link_to 'Thoughts', thoughts_path %><br>

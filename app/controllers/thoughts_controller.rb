@@ -6,7 +6,6 @@ class ThoughtsController < ApplicationController
   end
 
   def show
-    @sources = Source.all
   end
 
   def new
@@ -51,6 +50,11 @@ class ThoughtsController < ApplicationController
     end
   end
   
+  def add_links_to
+    body.gsub!(/\[\[/, "<a href='")
+    body.gsub!(/s\|s/, "'> ")
+    body.gsub!(/\]\]/, "</a>")
+  end
   
 
 
