@@ -5,7 +5,7 @@ class Thought < ActiveRecord::Base
   
   def typed_thought
     a = body.to_s
-    @typed_thought_link = a.match(/\[\[(\D+)\|/)
+    @typed_thought_link = a.match(/\[\[(\D+)\|(\D+)\]\]/)
     @thought_link = @typed_thought_link[1].strip
     @text_shown = @typed_thought_link[2].strip
   end
@@ -16,7 +16,7 @@ class Thought < ActiveRecord::Base
   
   def body_with_links
     a = body.to_s
-    a.gsub!(/\[\[(\D+)\|(\D+)\]\]/, "<a href='http://localhost:3000/thoughts/#{@thought_link_id}>#{@text_shown}</a>")
+    a.gsub!(/\[\[(\D+)\|(\D+)\]\]/, "<a href='http://localhost:3000/thoughts/#{@thought_link_id}'>#{@text_shown}</a>")
   end
    
 end

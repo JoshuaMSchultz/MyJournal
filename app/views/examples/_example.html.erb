@@ -1,4 +1,5 @@
 <%= div_for example do %> 
   <%= example.body %><br>
-  <%= link_to 'Delete', thought_example_path(:thought_id => @thought, :id => example), confirm: 'Are you sure?', method: :delete %><br>
+  <%= render :file => 'sources/_source' %>
+  <%= link_to 'Delete Example', thought_example_path(:thought_id => @thought, :id => example), confirm: 'Are you sure?', method: :delete %>
 <% end %>

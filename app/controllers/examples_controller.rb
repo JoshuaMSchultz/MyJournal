@@ -3,6 +3,7 @@ class ExamplesController < ApplicationController
 
     def create
       @example = @thought.examples.new(example_params)
+      @example.source_id = params[:source_id]
       if @example.save
         redirect_to @thought, notice: 'Thanks for your example'
       else
@@ -22,6 +23,6 @@ class ExamplesController < ApplicationController
     end
   
     def example_params
-      params.require(:example).permit(:body)
+      params.require(:example).permit(:body, :source_id)
     end
 end
