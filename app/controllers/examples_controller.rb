@@ -10,6 +10,20 @@ class ExamplesController < ApplicationController
         redirect_to @thought, alert: 'Unable to add Example'
       end
     end
+    
+    def edit
+      @example = Example.find(params[:id])
+      @sources = Source.all
+    end
+    
+    def update
+      if @thought.example.update(example_params)
+        redirect_to @thought
+      else
+        render @thought
+      end
+    end
+    
   
     def destroy
       @example = @thought.examples.find(params[:id])

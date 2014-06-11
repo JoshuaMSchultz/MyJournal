@@ -4,7 +4,7 @@ class ThoughtsController < ApplicationController
   def index
     @thoughts = Thought.all
   end
-
+  
   def show
     @sources = Source.all
   end

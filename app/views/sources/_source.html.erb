@@ -1,4 +1,6 @@
 <p>
-	from a <%= @thought.examples[].source.medium %> named <%= @thought.examples[].source.name %>
+	<% examples.each do |eg| %>
+	from <%= eg.source.name[0..20] if eg.source %>...
+	<% end %>
 </p>
 
