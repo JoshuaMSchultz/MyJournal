@@ -17,11 +17,13 @@ class ExamplesController < ApplicationController
     end
     
     def update
-      if @thought.example.update(example_params)
-        redirect_to @thought
-      else
-        render @thought
-      end
+      @sources = Source.all  
+      @example = Example.find(params[:id])
+        if @example.update(example_params)
+            redirect_to @thought, notice: 'Example udpated successfully'
+      	else
+            render :edit, notice: 'Error updating example'
+      	end
     end
     
   
