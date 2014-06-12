@@ -1,6 +1,10 @@
 <div class="container">
     <div id="examples">
-      <%= render :file => 'sources/_source',  locals: { examples: @thought.examples }  %>
+      
+      <div style = "font-style: italic;" >
+      from a <%= example.source.medium %> titled <%= example.source.name %>       
+      </div>
+      <br>
       <%= example.body %><br>
       <%= link_to 'Edit Example', edit_thought_example_path(@thought, example) %>
       <%= link_to 'Delete Example', thought_example_path(:thought_id => @thought, :id => example), confirm: 'Are you sure?', method: :delete %>
