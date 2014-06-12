@@ -4,10 +4,16 @@
   <%= @thought.title %>
 </h2>
 
-<p id="thought_body">
-    <%= @thought.body.html_safe %>
-</p>
-
-<%= link_to 'Thoughts', thoughts_path %><br>
-<%= link_to 'Edit', edit_thought_path(@thought) %><br> 
+<div id="modifiers">
+<%= link_to 'Edit', edit_thought_path(@thought) %>
 <%= link_to 'Delete', @thought, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+
+<div id="thought-body">
+<p>
+    <%= @thought.body.html_safe %>
+</p> 
+</div>
+
+
+

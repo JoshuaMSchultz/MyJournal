@@ -8,17 +8,32 @@ h2 {
     color: #383838; 
 }
 
+h3 {
+  font-size: 15px;
+  color: #383838;
+}
+
 #thought_header {
-    padding: 60px;
+    padding: 30px;
     font-size: 30px;
     text-align: center;
 }
 
 p {
-    color: #444444
+    color: #4c4c4c
 }
 
-#thought_body {
+#thought-body {
     padding: 10px;
     text-align: center;
+}
+
+#examples-heading {
+  padding-left: 200px;
+  text-align: center; 
+}
+
+#modifiers {
+  text-align: right;
+  font-size: 8px;
 }
