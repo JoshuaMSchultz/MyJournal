@@ -6,6 +6,7 @@ class SourcesController < ApplicationController
   end
 
   def show
+    @examples = Example.with_source_id(params[:id])
   end
 
   def new

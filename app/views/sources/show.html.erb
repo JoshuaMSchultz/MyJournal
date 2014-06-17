@@ -15,5 +15,12 @@
   <%= @source.subject %>
 </p>
 
+<p>
+  <% @examples.each do |example| %>
+  <%= link_to "#{example.thought_id}", thought_path(example.thought_id) %><br>
+  <%= example.body %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_source_path(@source) %> |
 <%= link_to 'Back', sources_path %>
