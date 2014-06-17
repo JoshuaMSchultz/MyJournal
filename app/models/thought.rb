@@ -1,5 +1,5 @@
 class Thought < ActiveRecord::Base
-  has_many :examples
+  has_many :examples, dependent: :destroy
   belongs_to :topic
   
   validates :body, presence: true

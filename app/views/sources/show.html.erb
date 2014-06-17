@@ -17,8 +17,8 @@
 
 <p>
   <% @examples.each do |example| %>
-  <%= link_to "#{example.thought_id}", thought_path(example.thought_id) %><br>
-  <%= example.body %>
+  <%= link_to "#{Thought.find(example.thought_id).title}", thought_path(example.thought_id) %><br>
+  <%= example.body %><br>
   <% end %>
 </p>
 
