@@ -1,7 +1,10 @@
 class Thought < ActiveRecord::Base
   has_many :examples
+  belongs_to :topic
   
   validates :body, presence: true
+  
+  scope :with_topic_id, lambda { |id| where("topic_id = ?", "#{id}") }
   
   def typed_thought
     a = body.to_s
