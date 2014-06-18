@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>MyJournal</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-   
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <ul class="nav navbar-nav">
-            <li><%= link_to "Thoughts", thoughts_path %></li>
-            <li><%= link_to "Topics", topics_path %></li>
-            <li><%= link_to "Sources", sources_path %></li>
-        </ul>
-    </div>
-</nav>
-<body id="main-page">
-    
-    <div class="container">
-        <%= yield %>
-    </div>
-    
-</body>
+<%= render 'layouts/shim' %>
+<%= render 'layouts/head' %>
+<%= render 'layouts/nav' %>
+    <body id="main-page">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+ 
+		<%= yield %>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
 </html>
