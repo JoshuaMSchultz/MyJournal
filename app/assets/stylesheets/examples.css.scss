@@ -5,17 +5,20 @@
 @import 'bootstrap';
 
 
+section#container {
+  size: 60%;
+  overflow: auto;
+  
+}
 
 #examples {
-  padding-left: 200px;
-  text-align: center;
+  text-align: left;
   color: #4c4c4c
-  /*border: 2px;*/
+
 }
 
 #new-example {
-  padding-left: 200px;
   text-align: center;
   color: #4c4c4c
-  /*border: 2px;*/
+
 }
