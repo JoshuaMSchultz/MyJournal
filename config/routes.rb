@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   resources :topics
-
   resources :sources
 
+  get '/thoughts/history', to: 'thoughts#history', as: :thoughts_history
   root 'thoughts#new'
   resources :thoughts do
     resources :examples
   end
+  
+
   
 
   # The priority is based upon order of creation: first created -> highest priority.

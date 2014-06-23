@@ -51,6 +51,10 @@ class ThoughtsController < ApplicationController
     end
   end
   
+  def history
+    @versions = PaperTrail::Version.order('created_at DESC')
+  end
+  
   
 
 
