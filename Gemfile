@@ -32,7 +32,7 @@ gem 'binding_of_caller'
 gem 'bootstrap-sass'
 gem 'paper_trail', '~> 3.0.2'
 gem 'ckeditor'
-
+gem 'paperclip'
 
 
 
