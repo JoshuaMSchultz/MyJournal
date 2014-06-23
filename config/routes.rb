@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :topics
   resources :sources
 
-  get '/thoughts/history', to: 'thoughts#history', as: :thoughts_history
+  get '/thoughts/:id/history', to: 'thoughts#history', as: :thoughts_history
   root 'thoughts#new'
   resources :thoughts do
     resources :examples

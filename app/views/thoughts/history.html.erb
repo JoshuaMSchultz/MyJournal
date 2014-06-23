@@ -4,18 +4,19 @@
   <ul>
     <% @versions.each do |version| %>
       <li>
-        <%= l(version.created_at, format: "%-d.%m.%Y %H:%M:%S %Z") %><br/>
-        Event ID: <%= version.id %><br/>
-        <b>Target:</b> <%= version.item_type %>
-        <small>(id: <%= version.item_id %>)</small>; <b>action</b> <%= version.event %>;<br/>
-        <div>
-          More info:
-          <pre><%= version.object %></pre>
+        <div class="container">
+
+        <%= version.created_at.strftime("#{version.event}d %m/%d/%Y") %><br/>
+        <div id="new-version">
+          Current Version
+          <pre><%= version.changeset['body'].last %></pre>
         </div>
-        <div>
-          Changeset:
-          <pre><%= version.changeset %></pre>
-      </div>
+        <div id="old-version">
+          Previous Version:
+          <pre><%= version.changeset['body'].first %></pre>
+        </div>
+          
+        </div>
       </li>
     <% end %>
   </ul>
