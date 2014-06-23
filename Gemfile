@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'bootstrap-sass'
+gem 'paper_trail', '~> 3.0.2'
 
 
 # Use ActiveModel has_secure_password

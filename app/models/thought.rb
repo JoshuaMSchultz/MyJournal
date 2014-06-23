@@ -1,4 +1,6 @@
 class Thought < ActiveRecord::Base
+  has_paper_trail
+  
   has_many :examples, dependent: :destroy
   belongs_to :topic
   
