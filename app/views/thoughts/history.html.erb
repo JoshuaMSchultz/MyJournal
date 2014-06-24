@@ -1,19 +1,19 @@
 <div class="container">
   <h1>History</h1>
  
-  <ul>
+  <ul style="list-style-type: none;">
     <% @versions.each do |version| %>
       <li>
         <div class="container">
 
-        <%= version.created_at.strftime("#{version.event}d %m/%d/%Y") %><br/>
+         <h4><%= version.created_at.strftime("#{version.event.capitalize}d %B %d, %Y  %l:%m %p ") %></h4><br/>
         <div id="new-version">
-          Current Version
-          <pre><%= version.changeset['body'].last %></pre>
+          Previous Version
+          <pre><%= version.changeset['body'][0] %></pre>
         </div>
         <div id="old-version">
-          Previous Version:
-          <pre><%= version.changeset['body'].first %></pre>
+          New Version:
+          <pre><%= version.changeset['body'][1] %></pre>
         </div>
           
         </div>
