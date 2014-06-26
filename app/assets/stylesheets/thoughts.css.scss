@@ -4,6 +4,12 @@
 
 @import "bootstrap";
 
+// Basic Elements //
+
+p {
+    color: #4c4c4c  
+}
+
 h2 {
     color: #383838; 
 }
@@ -13,22 +19,28 @@ h3 {
   color: #383838;
 }
 
-#thought_header {
-    padding: 30px;
-    font-size: 30px;
-    text-align: center;
+a:hover {
+	color: none;
+	background: none;
 }
 
-p {
-    color: #4c4c4c
-    
+// Thought Container //
+
+section.main {
+	padding: 20px;
 }
 
 section#container {
     width: 50%;
 	  margin: 10px auto;
 	  overflow: auto;
-}
+	}
+		
+#thought_header {
+    padding: 30px;
+    font-size: 30px;
+    text-align: center;
+	}
 
 #thought-body {
     font-size: 18px;
@@ -38,12 +50,20 @@ section#container {
     text-align: left;
 }
 
-#form {
-    width: 50%;
-	  margin: 10px auto;
-	  overflow: auto; 
+// Thought forms //
+
+#simple_form_edit_thought {
+	margin: 10px auto;
+	overflow: auto; 
 }
 
+#form {
+  .container {
+	  width: 100%;
+  }
+}
+
+// Nested Examples //
 #examples-heading {
   text-align: left;
   font-size: 22px;
@@ -55,12 +75,15 @@ section#container {
   font-size: 10px;
 }
 
+// Thought History //
 #new-version {
   width: 50%;
   float: left;
+	padding: 10px;
 }
 
 #old-version {
   width: 50%;
   float: right;
+	padding: 10px;
 }
