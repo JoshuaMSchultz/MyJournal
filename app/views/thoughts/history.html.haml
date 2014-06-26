@@ -1,0 +1,14 @@
+%h1 History
+
+%ul.no-list
+  - @versions.each do |version|
+    %li
+    .container
+      %h4= version.created_at.strftime("#{version.event.capitalize}d %B %d, %Y  %l:%m %p")
+      #new-version
+        Changed Version
+        %pre= version.changeset['body'][1]
+      #old-version
+        Previous Version:
+        %pre= version.changeset['body'][0]   
+    
