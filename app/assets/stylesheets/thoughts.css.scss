@@ -58,6 +58,7 @@ section#container {
 
 // Thought forms //
 
+
 #simple_form_edit_thought {
 	margin: 10px auto;
 	overflow: auto; 
@@ -88,8 +89,30 @@ section#container {
 }
 
 // Thought History //
+h1 {
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+}
+
+.container {
+	width: 90%;
+}
+#history-main.container {
+	align: center;
+}
+
+.back-btn-right {
+	float: right;
+	margin-right: 10%;
+}
+
+
+
 #new-version {
-  width: 50%;
+  width: 50%%;
   float: left;
 	padding: 10px;
 }
@@ -99,3 +122,4 @@ section#container {
   float: right;
 	padding: 10px;
 }
+

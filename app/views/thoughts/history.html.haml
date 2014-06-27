@@ -1,14 +1,21 @@
-%h1 History
+#history-main.container
+  %h1 History
+  .back-btn-right.btn.btn-default= link_to 'Back', :back
 
-%ul.no-list
-  - @versions.each do |version|
-    %li
-    .container
-      %h4= version.created_at.strftime("#{version.event.capitalize}d %B %d, %Y  %l:%m %p")
-      #new-version
-        Changed Version
-        %pre= version.changeset['body'][1]
-      #old-version
-        Previous Version:
-        %pre= version.changeset['body'][0]   
+
+
+  %ul
+    - @versions.each do |version|
+      %li
+      .container
+        %h4= version.created_at.strftime("#{version.event.capitalize}d %B %d, %Y  %l:%m %p")
+        #new-version
+          Was Changed To:
+          %pre= version.changeset['body'][1]
+        #old-version
+          This:
+          %pre= version.changeset['body'][0]   
+				
+  .back-btn-right.btn.btn-default= link_to 'Back', :back
+
     

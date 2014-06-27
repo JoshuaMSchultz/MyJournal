@@ -1,17 +1,25 @@
+
 <div id="new-example">
 <%= form_for([@thought, @thought.examples.new]) do |f| %>
   <div class="field">
     <%= f.label :body, 'Add Example' %><br />
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
   </div>
 <h4>Choose Source:</h4>
   <select name="source_id">
-	  <%= @sources.each do |s| %>
-	    <option value="<%= s.id %>"><%= s.name %></option>
-	  <% end %>
+ <%= @sources.each do |s| %>
+   <option value="<%= s.id %>"><%= s.name %></option>
+ <% end %>
   </select>
   <div class="actions">
-	<%= f.submit "Add" %>
+<%= f.submit "Add" %>
   </div>
 <% end %>
 </div>
+
+<!-- >#new-example
+  = simple_form_for(@thought.examples.new) do |form|
+    = form.cktext_area :body
+    = form.association :source, as: :dropdown
+    = form.button :submit
+
