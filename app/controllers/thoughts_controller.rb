@@ -52,7 +52,7 @@ class ThoughtsController < ApplicationController
   end
   
   def history
-    #@versions = PaperTrail::Version.where(item_type: 'Thought').order('created_at DESC')
+    @yversions = PaperTrail::Version.where(item_type: 'Thought').order('created_at DESC')
     @versions = Thought.find(params[:id]).versions
   end
   

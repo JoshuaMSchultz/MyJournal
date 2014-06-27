@@ -7,7 +7,7 @@
 // Basic Elements //
 
 p {
-    color: #4c4c4c  
+    color: #4c4c4c;  
 }
 
 h2 {
@@ -19,9 +19,14 @@ h3 {
   color: #383838;
 }
 
+a {
+	color: #4c4c4c;
+}
+
 a:hover {
 	color: none;
 	background: none;
+	text-decoration: none;
 }
 
 // Thought Container //
@@ -40,13 +45,14 @@ section#container {
     padding: 30px;
     font-size: 30px;
     text-align: center;
+		color: #3C466D;
 	}
 
 #thought-body {
     font-size: 18px;
-    font-padding: 5%;
+    //font-padding: 5%;
     color: #d1d125;
-    padding: 10px;
+    //padding: 10px;
     text-align: left;
 }
 
@@ -64,6 +70,12 @@ section#container {
 }
 
 // Nested Examples //
+
+#examples {
+	width: 70%;
+	align: left;
+}
+
 #examples-heading {
   text-align: left;
   font-size: 22px;
