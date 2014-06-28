@@ -3,7 +3,7 @@
 		= simple_form_for(@thought, html: {class: 'form-horizontal' }) do |form|
 			= form.input :title, input_html: {maxlength: 50, class: "input-group" }
 			%br
-			= form.cktext_area :body, placeholder: 'What\'s inspiring you', input_html: {class: 'simple_form_edit_thought'}
+			= form.cktext_area :body, placeholder: 'What\'s inspiring you', :input_html => { :ckeditor => {:toolbar => 'Full'} } 
 			= form.button :submit, input_html: {class: "btn btn-default"}
 
   

@@ -1,11 +1,13 @@
+
+
 %section.main
   %section#container
     %h1 Edit Your Example
     = simple_form_for([@thought, @example]) do |form| 
-      = form.cktext_area :body
-      .btn-group{:style => "padding: 10px;"}
+      .btn-group{:style => "padding: 10px 0 10px 0;"}
         = form.association :source, :label => "Choose a Source", :input_html => {class: 'btn btn-default dropdown-toggle'} 
-      %br  
+      %br
+      = form.cktext_area :body, :class => "form-control", :ckeditor => {:toolbar => 'Basic'}
       = form.button :submit, class: "btn btn-default"
   
 
