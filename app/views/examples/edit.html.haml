@@ -1,5 +1,3 @@
-
-
 %section.main
   %section#container
     %h1 Edit Your Example
@@ -8,7 +6,8 @@
         = form.association :source, :label => "Choose a Source", :input_html => {class: 'btn btn-default dropdown-toggle'} 
       %br
       = form.cktext_area :body, :class => "form-control", :ckeditor => {:toolbar => 'Basic'}
-      = form.button :submit, class: "btn btn-default"
+      %br{:style => "padding: 10px 0 10px 0;"}
+      = form.button :submit, :class => "btn btn-primary"
   
 
 

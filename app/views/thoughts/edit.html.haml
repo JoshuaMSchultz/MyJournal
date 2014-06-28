@@ -3,9 +3,9 @@
   %h1 Refine Your Idea
 
   = render 'form'
-
-  = link_to 'Show', @thought
-  = link_to 'Back', thoughts_path
+  .btn-group{:style => "padding: 10px 0 10px 0;"}
+    = link_to 'Show', @thought, :class => 'btn btn-default'
+    = link_to 'Back', :back, :class => 'btn btn-default'
 
 
 
