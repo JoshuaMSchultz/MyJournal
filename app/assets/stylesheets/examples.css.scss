@@ -5,11 +5,15 @@
 @import 'bootstrap';
 
 
-section#container {
-  size: 60%;
-  overflow: auto;
-  
+section.main {
+	padding: 20px;
 }
+
+section#container {
+    width: 50%;
+	  margin: 10px auto;
+	  overflow: auto;
+	}
 
 #examples {
   text-align: left;

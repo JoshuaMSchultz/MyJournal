@@ -5,7 +5,8 @@
     %br
     #example-body= example.body 
     %br
-    .btn-group.btn.btn-default.btn-sm= link_to 'Edit Example', edit_thought_example_path(@thought, example)
-    /= link_to 'Delete Example', example_thought_path, method: :delete, data: { confirm: 'Are you sure?'}
+    .btn-group
+      = link_to 'Edit Example', edit_thought_example_path(@thought, example), :class => "btn btn-default btn-sm"
+      = link_to 'Delete Example', thought_example_path(@thought, example), method: :delete, data: { confirm: 'Are you sure?'}, :class => "btn btn-default btn-sm"
 
 

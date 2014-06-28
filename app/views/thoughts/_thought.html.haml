@@ -4,8 +4,9 @@
   %h2#thought_header= @thought.title
 		
   #modifiers
-    .btn.btn-group.btn-default= link_to 'Edit', edit_thought_path(@thought)
-    .btn.btn-group.btn-default= link_to 'Delete', @thought, method: :delete, data: { confirm: 'Are you sure?'}
+    .btn-group
+      = link_to 'Edit', edit_thought_path(@thought), :class => "btn btn-default"
+      = link_to 'Delete', @thought, :class => "btn btn-default", method: :delete, data: { confirm: 'Are you sure?'}
 			
   #thought-body
     %p= @thought.body.html_safe
