@@ -1,0 +1,10 @@
+= simple_form_for(@quote) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.cktext_area :quote, :class => "form-control", :ckeditor => {:toolbar => 'Basic'}
+    = f.input :author
+    = f.association :source
+
+  .form-actions
+    = f.button :submit

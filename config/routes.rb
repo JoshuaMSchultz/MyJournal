@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :quotes
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :topics
   resources :sources
