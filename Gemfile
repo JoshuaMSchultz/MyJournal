@@ -40,6 +40,8 @@ gem 'haml-rails'
 gem 'devise'
 gem 'bootstrap-sass'
 
+gem 'acts-as-taggable-on'
+
 
 
 # Use ActiveModel has_secure_password

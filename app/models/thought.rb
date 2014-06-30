@@ -1,5 +1,6 @@
 class Thought < ActiveRecord::Base
   has_paper_trail
+  acts_as_taggable
   
   has_many :examples, dependent: :destroy
   belongs_to :topic

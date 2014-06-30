@@ -6,6 +6,7 @@
         = form.association :source, :label => "Choose a Source", :input_html => {class: 'btn btn-default dropdown-toggle'} 
       %br
       = form.cktext_area :body, :class => "form-control", :ckeditor => {:toolbar => 'Basic'}
+      = form.input :tag_list
       %br{:style => "padding: 10px 0 10px 0;"}
       = form.button :submit, :class => "btn btn-primary"
   

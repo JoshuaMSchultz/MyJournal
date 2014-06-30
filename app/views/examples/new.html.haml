@@ -3,5 +3,6 @@
     #new-example-text-area
       = form.cktext_area :body, :class => "form-control", :ckeditor => {:toolbar => 'Basic'}
     = form.association :source
+    = form.input :tag_list
     = form.button :submit
 

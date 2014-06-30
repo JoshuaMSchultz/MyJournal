@@ -37,6 +37,6 @@ class ExamplesController < ApplicationController
     end
   
     def example_params
-      params.require(:example).permit(:body, :source_id)
+      params.require(:example).permit(:body, :source_id, :tag_list)
     end
 end
