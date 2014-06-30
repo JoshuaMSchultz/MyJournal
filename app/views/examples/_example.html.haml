@@ -3,7 +3,7 @@
     %div{style: "font-style: italic" }
       from a #{example.source.medium} titled #{example.source.name}    
     %br
-    #example-body= example.body 
+    #example-body= example.body.html_safe
     %br
     .btn-group
       = link_to 'Edit', edit_thought_example_path(@thought, example), :class => "btn btn-default btn-sm"
