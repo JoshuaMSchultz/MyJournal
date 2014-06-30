@@ -13,11 +13,9 @@ class ExamplesController < ApplicationController
     
     def edit
       @example = Example.find(params[:id])
-      @sources = Source.all
     end
     
     def update
-      @sources = Source.all  
       @example = Example.find(params[:id])
         if @example.update(example_params)
             redirect_to @thought, notice: 'Example udpated successfully'

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %h2= @topic.name
+ 
+  %p
+    - @thoughts.each do |thought|
+      =link_to "#{thought.title}", thought_path(thought.id)
+
+= link_to 'Edit', edit_topic_path(@topic)
+\|
+= link_to 'Back', :back

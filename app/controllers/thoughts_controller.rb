@@ -67,7 +67,7 @@ class ThoughtsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thought_params
-      params.require(:thought).permit(:title, :body, :example_id)
+      params.require(:thought).permit(:title, :body, :example_id, :topic_id)
     end
     
 end

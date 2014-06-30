@@ -1,0 +1,7 @@
+#new-example
+  = simple_form_for([@thought, @thought.examples.new]) do |form|
+    #new-example-text-area
+      = form.cktext_area :body, :class => "form-control", :ckeditor => {:toolbar => 'Basic'}
+    = form.association :source
+    = form.button :submit
+
