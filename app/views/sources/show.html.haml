@@ -1,0 +1,33 @@
+%p#id= notice
+
+%p
+  %b Medium
+  = @source.medium
+
+%p
+  %b Name
+  = @source.name
+#sourced-examples 
+  %p
+    %b Examples
+    %br
+    - @examples.each do |example|
+      %h3= link_to "#{Thought.find(example.thought_id).title}", thought_path(example.thought_id)
+      %br
+      = example.body.html_safe
+
+#sourced-quotes
+  %p
+    %b Quotes
+    %br
+    - @quotes.each do |quote|
+      = quote.quote.html_safe
+  
+.btn-group
+  = link_to 'Edit', edit_source_path(@source), :class => "btn btn-default"
+  = link_to 'Delete', @source, :class => "btn btn-default", method: :delete, data: {confirm: 'Are you sure?'}
+%br
+= link_to 'Back', :back, :class => "btn btn-default"
+
+
+

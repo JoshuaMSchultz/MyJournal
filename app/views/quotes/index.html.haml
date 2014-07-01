@@ -1,4 +1,16 @@
-%h1 Listing quotes
+%h1 Quotes
+%p
+  %ul
+    - Quote.quote_authors.each do |author|
+      %li
+        %h2= author
+        - Quote.where(author: author).to_a.each do |quote|
+          = quote.quote.html_safe
+          %hr
+        
+      
+
+
 
 %table
   %tr

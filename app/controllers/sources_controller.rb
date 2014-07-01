@@ -7,6 +7,7 @@ class SourcesController < ApplicationController
 
   def show
     @examples = Example.with_source_id(params[:id])
+    @quotes = Quote.with_source_id(params[:id])
   end
 
   def new
