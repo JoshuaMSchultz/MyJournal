@@ -6,12 +6,10 @@
     %th Thought Count
     %th
     %th
-    %th
   - @topics.each do |topic|
     %tr
       %td= link_to topic.name, topic
       %td= topic.thoughts.count
-      %td= link_to 'Show', topic
 
 
 %br

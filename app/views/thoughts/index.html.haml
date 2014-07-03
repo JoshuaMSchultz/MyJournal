@@ -1,13 +1,13 @@
 %section.main
   %h1 Thoughts and Ideas
 
-  %table
-    %thead
-      %tr
-        %th Ideas
-    %tbody
-      - @thoughts.each do |thought|
-        %tr
-          %td= link_to thought.title, thought
+  %ul
+    - Topic.all.order(:name).each do |topic|
+      %li= topic.name
+      %ul
+        - topic.thoughts.each do |thought|
+          %li= link_to thought.title, thought
+    
+
   %br
   = link_to 'Add Idea', new_thought_path, :class => 'btn btn-primary'
