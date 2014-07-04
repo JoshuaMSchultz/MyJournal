@@ -19,41 +19,28 @@ class ThoughtsController < ApplicationController
 
   def create
     @thought = Thought.new(thought_params)
-    
-    respond_to do |format|
       if @thought.save
-        format.html { redirect_to @thought, notice: 'Thought was successfully created.' }
-        format.json { render :show, status: :created, location: @thought }
+        redirect_to @thought, notice: 'Thought was successfully created.' 
       else
-        format.html { render :new }
-        format.json { render json: @thought.errors, status: :unprocessable_entity }
+        render :new 
       end
-    end
   end
 
   def update
-    
-    respond_to do |format|
       if @thought.update(thought_params)
-        format.html { redirect_to @thought, notice: 'Thought was successfully updated.' }
-        format.json { render :show, status: :ok, location: @thought }
+        redirect_to @thought, notice: 'Thought was successfully updated.' 
       else
-        format.html { render :edit }
-        format.json { render json: @thought.errors, status: :unprocessable_entity }
+        render :edit 
       end
-    end
   end
 
   def destroy
     @thought.destroy
-    respond_to do |format|
-      format.html { redirect_to thoughts_url, notice: 'Thought was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to thoughts_url, notice: 'Thought was successfully destroyed.'
+
   end
   
   def history
-    @yversions = PaperTrail::Version.where(item_type: 'Thought').order('created_at DESC')
     @versions = Thought.find(params[:id]).versions
   end
   
