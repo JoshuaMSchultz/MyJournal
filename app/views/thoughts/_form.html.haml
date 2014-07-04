@@ -1,13 +1,11 @@
-#form
-  .container
-    - simple_form_for(@thought) do |form|
-      = form.input :title, :input_html => {maxlength: 50}
-      -#= form.association :topic
-      %br
-      = form.cktext_area :body, :class => 'form-control'
-      = form.input :tag_list
-      %br{:style => "padding: 10px 0 10px 0;"}
-      = form.button :submit, 'Update', :class => "btn btn-primary"
+= simple_form_for(@thought) do |f|
+  = f.error_notification
 
-  
+  .form-inputs
+    = f.input :title
+    = f.association :topic
+    = f.cktext_area :body, :class => "form-control"
+    = f.input :tag_list
 
+  .form-actions
+    = f.button :submit, 'Done', :class => "btn btn-primary"

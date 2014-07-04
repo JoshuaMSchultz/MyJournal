@@ -1,0 +1,17 @@
+%h1 Sources
+
+%table
+  %tr
+    %th Medium
+    %th Name
+    %th Author
+  -@sources.each do |source|
+    %tr
+      %td= source.medium
+      %td= link_to source.name, source 
+      %td= source.author
+
+
+%br
+
+= link_to 'Add Source', new_source_path, :class => 'btn btn-default'

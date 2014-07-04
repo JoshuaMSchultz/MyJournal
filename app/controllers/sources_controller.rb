@@ -19,36 +19,24 @@ class SourcesController < ApplicationController
 
   def create
     @source = Source.new(source_params)
-
-    respond_to do |format|
       if @source.save
-        format.html { redirect_to @source, notice: 'Source was successfully created.' }
-        format.json { render :show, status: :created, location: @source }
+        redirect_to @source, notice: 'Source was successfully created.' 
       else
-        format.html { render :new }
-        format.json { render json: @source.errors, status: :unprocessable_entity }
+        render :new 
       end
-    end
   end
 
   def update
-    respond_to do |format|
       if @source.update(source_params)
-        format.html { redirect_to @source, notice: 'Source was successfully updated.' }
-        format.json { render :show, status: :ok, location: @source }
+        redirect_to @source, notice: 'Source was successfully updated.' 
       else
-        format.html { render :edit }
-        format.json { render json: @source.errors, status: :unprocessable_entity }
+        render :edit 
       end
-    end
   end
 
   def destroy
     @source.destroy
-    respond_to do |format|
-      format.html { redirect_to sources_url, notice: 'Source was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      redirect_to sources_url, notice: 'Source was successfully destroyed.'
   end
 
   private

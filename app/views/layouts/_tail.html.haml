@@ -1,0 +1,26 @@
+/ Javascript at the bottom for fast page loading
+/ Grab Google CDN's jQuery. fall back to local if necessary
+%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
+%script{:src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"}
+:javascript
+  !window.jQuery && document.write('<script src="javascripts/jquery-1.4.2.min.js"><\/script>')
+= yield :javascript
+/[if lt IE 7 ]
+  <script src="js/dd_belatedpng.js?"></script>
+  <script>
+  \  //fix those png IMGs and .png_bg background-images
+  \  DD_belatedPNG.fix('img, .png_bg');
+  </script>
+/ yui profiler and profileviewer - remove for production
+/ %script{:src => "js/profiling/yahoo-profiling.min.js?"}
+/ %script{:src => "js/profiling/config.js?v=1"}
+/ end profiling code
+:javascript
+  var _gaq = [['_setAccount', 'UA-1098906-8'], ['_trackPageview']];
+  (function(d, t) {
+   var g = d.createElement(t),
+       s = d.getElementsByTagName(t)[0];
+   g.async = true;
+   g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   s.parentNode.insertBefore(g, s);
+  })(document, 'script');

@@ -1,0 +1,11 @@
+!!!5
+= render 'layouts/shim'
+= render 'layouts/head'
+%body
+  #container
+    = render 'layouts/nav'
+    #main
+      = yield
+    = render 'layouts/footer'
+  = render 'layouts/tail'
+
