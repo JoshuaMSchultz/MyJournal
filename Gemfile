@@ -42,6 +42,9 @@ gem 'bootstrap-sass'
 
 gem 'acts-as-taggable-on'
 
+gem 'mysql2psql'
+gem 'pg'
+
 
 
 # Use ActiveModel has_secure_password
