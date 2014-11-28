@@ -1,7 +1,7 @@
 CKEDITOR.editorConfig = function( config )
 {
  
-  config.toolbar = 'Full';
+  config.toolbar = 'Basic';
  
   config.toolbar_Full =
   [
